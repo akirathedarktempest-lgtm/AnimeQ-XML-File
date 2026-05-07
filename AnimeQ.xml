@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quotes>
+<description>This is an XML File having anime quotes, and not just animes. So I have named it "show"</description>
+<show>
+    <name>Omniscient Reader's Viewpoint</name> 
+    <character>
+        <character-name>Kim Dokja</character-name>
+        <quote>"I wish to see the novel's epilogue."</quote>
+        <quote>"I refuse to give up as a reader"</quote>
+        <quote>"I am just an ordinary reader...a 'Dokja'."</quote>
+    </character>
+</show>
+</quotes>
