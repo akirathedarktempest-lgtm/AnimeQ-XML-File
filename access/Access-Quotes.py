@@ -1,7 +1,7 @@
 import xmltodict
 import requests
 
-response=requests.get("https://akirathedarktempest-lgtm.github.io/AnimeQ-XML-File/AnimeQ.xml")
+response=requests.get("https://akirathedarktempest-lgtm.github.io/AnimeQ-XML-File/main/AnimeQ.xml")
 
 
 class Dictionary:
