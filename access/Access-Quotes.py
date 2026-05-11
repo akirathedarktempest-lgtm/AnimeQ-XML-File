@@ -1,5 +1,6 @@
 import xmltodict
 import requests
+import random
 
 response=requests.get("https://akirathedarktempest-lgtm.github.io/AnimeQ-XML-File/main/AnimeQ.xml")
 
