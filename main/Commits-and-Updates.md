@@ -5,3 +5,5 @@ Update time: (10:10 A.M. GMT +05:30 May 8 26)
 Yo! So today I am adding a new file, how to access the quotes by xml file, pretty easy...it wasn't, the VS Code was making me angry, otherwise by looking at the dictionary I managed to code it, though the dictionary looked complicated now but I did it :) Update Time: (18:00 GMT +05:30 May 9 26)
 # Putting every file in a proper folder
 Now I have given the files a folder to make it easy and all set! Update Time: (11:04 GMT +05:30 May 10 26)
+# Adding new methods
+Today, I have added a function which gives you a random quote of a character randomly chosen, and another function which gives you a random quote of the character you searched for...forgot to write import random at the file :( (Update Time: 16:46 GMT +05:30 May 11 26)
