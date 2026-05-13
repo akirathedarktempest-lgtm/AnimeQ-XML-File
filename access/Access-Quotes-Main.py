@@ -1,0 +1,73 @@
+#This is now the main file, the first one can't be accessed because now we have two shows, ORV and Oshi No Ko, and it may cause error, but this one will work now perfectly. 
+#I have made it by using the previous one and just made a little bit of changes, as the show is not a dictionary now, but a list having more than one show, and each show is a dictionary...it looks confusing, but it is what it is
+
+import xmltodict
+import requests
+import random
+
+response=requests.get("https://akirathedarktempest-lgtm.github.io/AnimeQ-XML-File/main/AnimeQ.xml")
+
+class Dictionary:
+    def __init__(self):
+        pass
+
+    dictionary=xmltodict.parse(response.text)
+
+    quotes=dictionary["quotes"]#this opens the main dictionary we get
+    description=dictionary["quotes"]["description"]#this is the description of the xml file already given before anything
+
+    def findShow(self):
+        show_name=input()
+        for j in self.quotes["show"]:
+            show=j["name"]
+            if show_name!=show:
+                pass
+            else:
+                print(j["name"])
+                for i in j["character"]:
+                    print(i["character-name"])
+                    for z in i['quote']:
+                        print(z)
+                return
+        
+        print("Can't find the searched show :(")
+
+    def characterQuote(self):
+        character_name=input()
+        for j in self.quotes["show"]:
+            for i in j["character"]:
+                if i["character-name"]==character_name:
+                    print(i["character-name"])
+                    for z in i["quote"]:
+                        print(z)
+                    return
+                else:
+                    pass
+        print("Couldn't find the character :(")
+
+    def randomQuote(self):
+        show=random.choice(self.quotes["show"])
+        character=show["character"]
+        character=random.choice(character)
+        quote=random.choice(character["quote"])
+        print(f"{quote} ~ {character["character-name"]}")
+
+    def characterRandom(self):
+        character_name=input()
+        show=self.quotes["show"]
+        for s in show:
+            character=s["character"]
+            for i in character:
+                if i["character-name"]==character_name:
+                    quote=random.choice(i["quote"])
+                    print(f"{quote} ~ {i["character-name"]}")
+                    return
+                else:
+                    pass
+        print("Can't find any character you searched for :(")
+
+dictionary=Dictionary()
+dictionary.findShow()
+dictionary.characterQuote()
+dictionary.randomQuote()
+dictionary.characterRandom()
