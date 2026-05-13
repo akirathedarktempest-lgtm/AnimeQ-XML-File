@@ -7,3 +7,5 @@ Yo! So today I am adding a new file, how to access the quotes by xml file, prett
 Now I have given the files a folder to make it easy and all set! Update Time: (11:04 GMT +05:30 May 10 26)
 # Adding new methods
 Today, I have added a function which gives you a random quote of a character randomly chosen, and another function which gives you a random quote of the character you searched for...forgot to write import random at the file :( (Update Time: 16:46 GMT +05:30 May 11 26)
+# Added the Main Access file!
+The previous one is old and can error, it had only one show but the new one manages multiple shows! (Update Time: 15:59 GMT +05:30)
