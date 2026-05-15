@@ -38,8 +38,13 @@ class Dictionary:
             for i in j["character"]:
                 if i["character-name"]==character_name:
                     print(i["character-name"])
-                    for z in i["quote"]:
-                        print(z)
+                    if type(i["quote"]) is str:#yesterday i added Akane to the file having only one quote, and at night I realized...if there's just one quote, then it wouldn't work like list it will start printing character by character
+                        print(i["quote"])#it was something serious, so I thought whole night and concluded to use type! I tried it first, it gave character by character, and after adding type, it worked perfectly like I want!
+                    elif type(i["quote"]) is list:
+                        for z in i["quote"]:
+                            print(z)
+                    else:
+                        print("Something is wrong!")
                     return
                 else:
                     pass
