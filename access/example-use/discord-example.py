@@ -53,4 +53,25 @@ async def showQuotes(ctx:commands.Context,name:str):
             pass
     await ctx.send("Couldn't find the show from the XML :(")
 
+@bot.command()
+async def characterQuotes(ctx:commands.Context,name:str):#this will give all the quotes of a character present in the xml file you search for and if the character is not present, it will say couldn't find...should I use can't? Need an english tutor guys
+    name=name.title()
+    show=quotes["show"]
+    quo=""
+    for i in show:
+        for j in i["character"]:
+            if j["character-name"]==name:
+                if type(j["quote"]) is str:
+                    quo+=f"*{j["quote"]} ~{j["character-name"]}*"
+                elif type(j["quote"]) is list:
+                    for z in j["quote"]:
+                        quo+=f"*{z} ~{j["character-name"]}*\n\n"
+                else:
+                    quo+="There's something wrong!"
+                embed=discord.Embed(title=name,description=quo)
+                return await ctx.send(embed=embed)
+            else:
+                pass
+    return await ctx.send("Couldn't find a character :(")
+
 bot.run('TOKEN')
