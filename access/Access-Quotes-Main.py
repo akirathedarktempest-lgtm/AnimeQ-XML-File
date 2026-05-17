@@ -26,8 +26,13 @@ class Dictionary:
                 print(j["name"])
                 for i in j["character"]:
                     print(i["character-name"])
-                    for z in i['quote']:
-                        print(z)
+                    if type(i["quote"]) is str:#this thing i noticed in experimenting discord bot example and as there is only one quote of Akane, it wasn't a list, it was a str
+                        print(i["quote"])
+                    elif type(i["quote"]) is list:#and at loop, the indexing was happening at string like character by character, like a\nb\nc and like that, I realized it would cause same here as well so corrected it
+                        for z in i['quote']:
+                            print(z)
+                    else:
+                        print("Something is wrong!")#and i will add else because ignoring else can have problem, if the condition is else and if you haven't written it then it will tell you nothing 
                 return
         
         print("Can't find the searched show :(")
