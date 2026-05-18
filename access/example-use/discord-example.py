@@ -74,4 +74,27 @@ async def characterQuotes(ctx:commands.Context,name:str):#this will give all the
                 pass
     return await ctx.send("Couldn't find a character :(")
 
+@bot.command()
+async def randomQuote(ctx:commands.Context):
+    show=random.choice(quotes["show"])
+    character=show["character"]
+    character=random.choice(character)
+    quote=random.choice(character["quote"])
+    embed=discord.Embed(title="Random Quote!",description=f"*{quote} ~ {character["character-name"]}*")
+    await ctx.send(embed=embed)
+
+@bot.command()
+async def randomCharacter(ctx:commands.Context,name:str):
+    name=name.title()
+    show=quotes["show"]
+    for i in show:
+        for j in i["character"]:
+            if name==j["character-name"]:
+                embed=discord.Embed(title=f"{name}'s Quote!",description=f"*{random.choice(j["quote"])} ~{name}*")
+                return await ctx.send(embed=embed)
+            else:
+                pass
+    await ctx.send("Couldn't find a character you searched for :(")
+
 bot.run('TOKEN')
+#and with this, the examples have also ended 18th May 16:25 GMT +05:30, and now I will just update the xml file, everything is covered now...I guess, and it was a fun project!
