@@ -76,8 +76,22 @@ class Dictionary:
                     pass
         print("Can't find any character you searched for :(")
 
+    def showRandom(self):#in this, you will give a name of a show, and it will gave a random quote from a random character in the show
+        show=self.quotes["show"]
+        name=input()
+        for i in show:
+            if i["name"]==name:
+                character=random.choice(i["character"])
+                n=character["character-name"]
+                quote=random.choice(character["quote"])
+                return print(f"{quote} ~ {n}")
+            else:
+                pass
+        print("Couldn't find a show :(")
+
 dictionary=Dictionary()
 dictionary.findShow()
 dictionary.characterQuote()
 dictionary.randomQuote()
 dictionary.characterRandom()
+dictionary.showRandom()
