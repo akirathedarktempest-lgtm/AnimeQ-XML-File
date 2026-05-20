@@ -96,5 +96,28 @@ async def randomCharacter(ctx:commands.Context,name:str):
                 pass
     await ctx.send("Couldn't find a character you searched for :(")
 
+@bot.command()
+async def showRandom(ctx:commands.Context,name:str):
+    name=name.title()
+    if "\'" in name:
+        number=name.index("\'")
+        if name[-1]==name[number]:
+            pass
+        else:
+            name=name.replace(name[number+1],name[number+1].lower())
+
+    show=quotes["show"]
+    for i in show:
+        if i["name"]==name:
+            character=i["character"]
+            character=random.choice(character)
+            n=character["character-name"]
+            quote=random.choice(character["quote"])
+            embed=discord.Embed(title=f"{name}'s Random Quote!",description=f"*{quote} ~ {n}*")
+            return await ctx.send(embed=embed)
+        else:
+            pass
+    await ctx.send("Can't find a show :(")
+
 bot.run('TOKEN')
 #and with this, the examples have also ended 18th May 16:25 GMT +05:30, and now I will just update the xml file, everything is covered now...I guess, and it was a fun project!
